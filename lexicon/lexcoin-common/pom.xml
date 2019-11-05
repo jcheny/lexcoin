@@ -17,6 +17,7 @@
     <properties>
         <java.version>1.8</java.version>
         <commons-lang>2.6</commons-lang>
+        <com.alibaba>1.2.47</com.alibaba>
     </properties>
 
     <dependencies>
@@ -33,6 +34,12 @@
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
             <version>${commons-lang}</version>
+        </dependency>
+        <!--json工具-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${com.alibaba}</version>
         </dependency>
 
     </dependencies>

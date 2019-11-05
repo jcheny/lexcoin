@@ -25,6 +25,11 @@
             <artifactId>lexcoin-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.lexcoin</groupId>
+            <artifactId>lexcoin-generate</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <!-- common End -->
         <!-- Spring Boot Begin -->
         <dependency>
@@ -51,6 +56,18 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
         <!-- Spring Cloud End -->
+
+        <!--security依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!--oauth2依赖-->
+       <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+            <version>2.3.3.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
