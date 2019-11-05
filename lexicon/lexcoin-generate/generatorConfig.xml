@@ -19,17 +19,19 @@
         </jdbcConnection>
 
         <!-- 对于生成的pojo所在包 -->
-        <javaModelGenerator targetPackage="com.lexcoin.pojo" targetProject="C:\Users\Administrator\Desktop\新建文件夹\lexicon\lexcoin-generate\src\main\java"/>
+        <javaModelGenerator targetPackage="com.lexcoin.pojo" targetProject="C:\Users\Administrator\Desktop\新建文件夹 (2)\lexcoin\lexicon\lexcoin-generate\src\main\java"/>
 
 <!--        &lt;!&ndash; 对于生成的mapper所在目录 &ndash;&gt;-->
-        <sqlMapGenerator targetPackage="mapper" targetProject="C:\Users\Administrator\Desktop\新建文件夹\lexicon\lexcoin-generate\src\main\resources"/>
+        <sqlMapGenerator targetPackage="mapper" targetProject="C:\Users\Administrator\Desktop\新建文件夹 (2)\lexcoin\lexicon\lexcoin-generate\src\main\resources"/>
 
 <!--         配置mapper对应的java映射 -->
-        <javaClientGenerator targetPackage="com.lexcoin.mapper" targetProject="C:\Users\Administrator\Desktop\新建文件夹\lexicon\lexcoin-generate\src\main\java"
+        <javaClientGenerator targetPackage="com.lexcoin.mapper" targetProject="C:\Users\Administrator\Desktop\新建文件夹 (2)\lexcoin\lexicon\lexcoin-generate\src\main\java"
                              type="XMLMAPPER"/>
 
 
-        <table tableName="user"></table>
+        <table tableName="tb_role"></table>
+        <table tableName="tb_role_user"></table>
+        <table tableName="tb_user"></table>
 
     </context>
 </generatorConfiguration>

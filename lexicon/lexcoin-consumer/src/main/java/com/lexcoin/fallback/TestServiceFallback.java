@@ -1,6 +1,5 @@
 package com.lexcoin.fallback;
 
-import com.lexcoin.pojo.User;
 import com.lexcoin.service.TestService;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +14,4 @@ public class TestServiceFallback implements TestService {
         return "echo fallback";
     }
 
-    @Override
-    public User getUser() {
-        return new User();
-    }
 }

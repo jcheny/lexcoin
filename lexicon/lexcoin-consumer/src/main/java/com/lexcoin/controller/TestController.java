@@ -1,6 +1,5 @@
 package com.lexcoin.controller;
 
-import com.lexcoin.pojo.User;
 import com.lexcoin.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -46,8 +45,7 @@ public class TestController {
 
     @GetMapping(value = "/echo/hi")
     public String echo2() {
-        User user = testService.getUser();
-        return testService.echo(":"+user.getMobile()+" ---Hi Feign:"+applicationContext.getEnvironment().getProperty("user.test"));
+        return testService.echo("Hi Feign:"+applicationContext.getEnvironment().getProperty("user.test"));
     }
 
 

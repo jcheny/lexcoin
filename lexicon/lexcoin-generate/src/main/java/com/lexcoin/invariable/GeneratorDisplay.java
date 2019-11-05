@@ -20,7 +20,7 @@ public class GeneratorDisplay {
         List<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
         //指定 逆向工程配置文件
-        File configFile = new File("C:\\Users\\Administrator\\Desktop\\新建文件夹\\lexicon\\lexcoin-generate\\generatorConfig.xml");
+        File configFile = new File("C:\\Users\\Administrator\\Desktop\\新建文件夹 (2)\\lexcoin\\lexicon\\lexcoin-generate\\generatorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configFile);
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
