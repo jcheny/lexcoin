@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lexcoin-auth/lexcoin-auth.iml" filepath="$PROJECT_DIR$/lexcoin-auth/lexcoin-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lexcoin-cloud/lexcoin-cloud.iml" filepath="$PROJECT_DIR$/lexcoin-cloud/lexcoin-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lexcoin-common/lexcoin-common.iml" filepath="$PROJECT_DIR$/lexcoin-common/lexcoin-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lexcoin-consumer/lexcoin-consumer.iml" filepath="$PROJECT_DIR$/lexcoin-consumer/lexcoin-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lexcoin-dependencies/lexcoin-dependencies.iml" filepath="$PROJECT_DIR$/lexcoin-dependencies/lexcoin-dependencies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lexcoin-gateway/lexcoin-gateway.iml" filepath="$PROJECT_DIR$/lexcoin-gateway/lexcoin-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lexcoin-generate/lexcoin-generate.iml" filepath="$PROJECT_DIR$/lexcoin-generate/lexcoin-generate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lexcoin-log/lexcoin-log.iml" filepath="$PROJECT_DIR$/lexcoin-log/lexcoin-log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lexcoin-provider/lexcoin-provider.iml" filepath="$PROJECT_DIR$/lexcoin-provider/lexcoin-provider.iml" />
+    </modules>
+  </component>
+</project>
