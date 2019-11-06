@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <commons-lang>2.6</commons-lang>
+        <commons-lang>3.9</commons-lang>
         <com.alibaba>1.2.47</com.alibaba>
     </properties>
 
@@ -31,8 +31,8 @@
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
             <version>${commons-lang}</version>
         </dependency>
         <!--json工具-->
@@ -40,6 +40,20 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${com.alibaba}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
         </dependency>
 
     </dependencies>

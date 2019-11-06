@@ -11,4 +11,10 @@
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
   </resultMap>
+    <select id="findUserByAccount" resultType="com.lexcoin.vo.UserVo">
+        select  a.*,c.role  from tb_user a
+        left join tb_role_user b on a.id = b.user_id
+        left join tb_role c on b.role_id = c.id
+        where a.account = #{username}
+    </select>
 </mapper>

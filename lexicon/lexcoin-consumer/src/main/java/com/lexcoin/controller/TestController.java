@@ -1,12 +1,16 @@
 package com.lexcoin.controller;
 
 import com.lexcoin.service.TestService;
+import com.lexcoin.utils.ResultGenerator;
+import com.lexcoin.vo.ApiResult;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,6 +21,7 @@ import javax.annotation.Resource;
  * @Date: 2019/11/5 11:07
  */
 @RestController
+@Slf4j
 public class TestController {
 
     @Autowired
@@ -35,7 +40,7 @@ public class TestController {
     @Value("${spring.application.name}")
     private String appName;
 
-    @GetMapping(value = "/echo/app/name")
+    @PostMapping(value = "/echo/app/name")
     public String echo1() {
         //使用 LoadBalanceClient 和 RestTemplate 结合的方式来访问
         ServiceInstance serviceInstance = loadBalancerClient.choose("lexcoin-provider");
@@ -43,9 +48,14 @@ public class TestController {
         return restTemplate.getForObject(url, String.class);
     }
 
-    @GetMapping(value = "/echo/hi")
+    @PostMapping(value = "/echo/hi")
     public String echo2() {
         return testService.echo("Hi Feign:"+applicationContext.getEnvironment().getProperty("user.test"));
+    }
+
+    @PostMapping(value = "/echo/jwt")
+    public ApiResult echo3() {
+        return ResultGenerator.genSuccessData("ok");
     }
 
 
