@@ -1,11 +1,13 @@
 package com.lexcoin.utils;
 
+import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.lang3.time.DateUtils;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -98,17 +100,17 @@ public class JwtUtil {
         if(claims == null){
             return false;
         }
-        String subject = claims.getSubject();
-        /*
-            TODO 对jwt里面的用户信息做判断
-            根据自己的业务编写
-         */
+        Long now = new Date().getTime();
+        Long expiration = claims.getExpiration().getTime();
+        if(now -expiration >0){
+            return false;
+        }
+        // TODO: 2019/11/7  
+        String id = claims.get("id", String.class);
+        String account = claims.get("account", String.class);
+        String description = claims.get("description", String.class);
+        String name = claims.get("name", String.class);
 
-        /*
-            获取token的过期时间，和当前时间作比较，如果小于当前时间，则token过期
-         */
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-        Date expiration = claims.getExpiration();
         return true;
     }
 

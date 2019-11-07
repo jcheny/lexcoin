@@ -81,8 +81,6 @@ public class AuthFilter implements GlobalFilter, Ordered {
                     return chain.filter(exchange.mutate().request(request).build());
                 }
             }
-
-
             //获取token
             String token = exchange.getRequest().getHeaders().getFirst("Authorization");
             ServerHttpResponse resp = exchange.getResponse();
