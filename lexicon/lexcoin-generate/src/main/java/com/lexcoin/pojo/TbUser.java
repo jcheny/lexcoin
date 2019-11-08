@@ -1,9 +1,15 @@
 package com.lexcoin.pojo;
 
+import lombok.Data;
+import tk.mybatis.mapper.annotation.Version;
+
+import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "tb_user")
-public class TbUser {
+@Data
+public class TbUser implements Serializable {
     @Id
     private String id;
 
@@ -15,13 +21,15 @@ public class TbUser {
 
     private String name;
 
-    public String getId() {
-        return id;
-    }
+    @Column(name = "version_lock")
+    @Version
+    private Integer versionLock;
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    @Column(name = "create_time")
+    private Date createTime;
+
+    @Column(name = "update_time")
+    private Date updateTime;
 
     /**
      * @return account
@@ -77,5 +85,47 @@ public class TbUser {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return version_lock
+     */
+    public Integer getVersionLock() {
+        return versionLock;
+    }
+
+    /**
+     * @param versionLock
+     */
+    public void setVersionLock(Integer versionLock) {
+        this.versionLock = versionLock;
+    }
+
+    /**
+     * @return create_time
+     */
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    /**
+     * @param createTime
+     */
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    /**
+     * @return update_time
+     */
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    /**
+     * @param updateTime
+     */
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

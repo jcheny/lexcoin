@@ -29,9 +29,12 @@
                              type="XMLMAPPER"/>
 
 
-        <table tableName="tb_role"></table>
-        <table tableName="tb_role_user"></table>
-        <table tableName="tb_user"></table>
+        <table tableName="tb_coin"></table>
+        <table tableName="tb_configuration"></table>
+        <table tableName="tb_flowing_water"></table>
+        <table tableName="tb_user_money"></table>
+        <table tableName="tb_wallet"></table>
+        <table tableName="tb_withdrawal"></table>
 
     </context>
 </generatorConfiguration>

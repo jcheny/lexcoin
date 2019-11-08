@@ -27,4 +27,7 @@ public class ResultGenerator {
         return new ApiResult(ApiEnum.FAIL);
     }
 
+    public static ApiResult getFallback() {
+        return new ApiResult(ApiEnum.FALLBACK);
+    }
 }

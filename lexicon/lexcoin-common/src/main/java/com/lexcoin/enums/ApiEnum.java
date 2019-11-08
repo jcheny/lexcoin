@@ -9,6 +9,7 @@ public enum ApiEnum {
     INSUFFICIENT_PERMISSIONS(4001,"访问资源的用户权限不足"),
     ACCESS_TOKEN_INVALID(4002,"Token无效"),
     SUCCESS(200, "成功"),
+    FALLBACK(900, "FALLBACK"),
     FAIL(500, "失败");
 
     ApiEnum(int code, String message) {

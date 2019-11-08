@@ -1,9 +1,14 @@
 package com.lexcoin.pojo;
 
+import lombok.Data;
+import tk.mybatis.mapper.annotation.Version;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "tb_role")
-public class TbRole {
+@Data
+public class TbRole implements Serializable {
     @Id
     private Integer id;
 
@@ -15,6 +20,10 @@ public class TbRole {
     private String name;
 
     private String role;
+
+    @Column(name = "version_lock")
+    @Version
+    private Integer versionLock;
 
     /**
      * @return id
@@ -84,5 +93,19 @@ public class TbRole {
      */
     public void setRole(String role) {
         this.role = role;
+    }
+
+    /**
+     * @return version_lock
+     */
+    public Integer getVersionLock() {
+        return versionLock;
+    }
+
+    /**
+     * @param versionLock
+     */
+    public void setVersionLock(Integer versionLock) {
+        this.versionLock = versionLock;
     }
 }
