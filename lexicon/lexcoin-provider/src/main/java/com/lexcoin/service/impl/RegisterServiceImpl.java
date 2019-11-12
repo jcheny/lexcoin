@@ -54,11 +54,11 @@ public class RegisterServiceImpl implements RegisterService {
         tbWallet.setId(UuidUtils.getUUID());
         tbWallet.setUserId(tbUser.getId());
         tbWallet.setAddress(UuidUtils.getUUID());
-        tbWallet.setDescribe("新用户注册生成");
+        tbWallet.setDescribes("新用户注册生成");
         tbWallet.setName("默认地址");
         tbWallet.setCreateTime(new Date());
         tbWallet.setUpdateTime(new Date());
-        int b = tbWalletMapper.insert(tbWallet);
+        int b = tbWalletMapper.insertSelective(tbWallet);
 
         for (TbCoin tbCoin : tbCoins) {
             TbUserMoney tbUserMoney = new TbUserMoney();
@@ -69,8 +69,9 @@ public class RegisterServiceImpl implements RegisterService {
             tbUserMoney.setCreateTime(new Date());
             tbUserMoney.setUpdateTime(new Date());
             tbUserMonies.add(tbUserMoney);
+
         }
-        int c = tbUserMoneyMapper.insertList(tbUserMonies);
+        int c = tbUserMoneyMapper.insertLists(tbUserMonies);
         return a + b + c == 1 + tbCoins.size() + 1;
 
     }

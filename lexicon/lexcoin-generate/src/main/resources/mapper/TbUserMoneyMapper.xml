@@ -17,4 +17,14 @@
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="version_lock" property="versionLock" jdbcType="BIGINT" />
   </resultMap>
+    <insert id="insertLists">
+      INSERT INTO tb_user_money
+      ( id,user_id,coin_id,address,available_amount,frozen_amount,lock_amount,other_amount,create_time,update_time,version_lock )  VALUES
+      <foreach collection="list" item="item"  separator=",">
+        (
+        #{item.id}, #{item.userId}, #{item.coinId}, #{item.address},
+         #{item.availableAmount}, #{item.frozenAmount}, #{item.lockAmount}, #{item.otherAmount}, #{item.createTime}, #{item.updateTime}, #{item.versionLock}
+        )
+      </foreach>
+    </insert>
 </mapper>
