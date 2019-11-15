@@ -1,8 +1,10 @@
 package com.lexcoin.controller;
 
+import com.lexcoin.service.KafkaService;
 import com.lexcoin.service.TestService;
 import com.lexcoin.utils.ResultGenerator;
 import com.lexcoin.vo.ApiResult;
+import com.lexcoin.vo.KafkaVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,6 +13,7 @@ import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -32,6 +35,11 @@ public class TestController {
 
     @Resource
     private TestService testService;
+
+    @Resource
+    private KafkaService kafkaService;
+
+
 
     // 注入配置文件上下文
     @Autowired
@@ -57,6 +65,13 @@ public class TestController {
     public ApiResult echo3() {
         return ResultGenerator.genSuccessData("ok");
     }
+
+    @PostMapping(value = "/echo/kafka")
+    public ApiResult echo4(@RequestBody KafkaVo kafkaVo) {
+        kafkaService.sendMsg(kafkaVo);
+        return ResultGenerator.genSuccessData("ok");
+    }
+
 
 
 }

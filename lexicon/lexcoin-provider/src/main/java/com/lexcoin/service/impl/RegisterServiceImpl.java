@@ -11,7 +11,6 @@ import com.lexcoin.pojo.TbUserMoney;
 import com.lexcoin.pojo.TbWallet;
 import com.lexcoin.service.RegisterService;
 import com.lexcoin.utils.UuidUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,7 +18,6 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * @Author:chenyu
