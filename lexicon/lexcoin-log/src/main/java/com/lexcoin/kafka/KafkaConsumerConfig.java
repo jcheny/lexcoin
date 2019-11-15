@@ -24,7 +24,6 @@ import java.util.Map;
  */
 @Configuration
 @EnableKafka
-@RefreshScope
 public class KafkaConsumerConfig {
 
     @Value("${kafka.consumer.username}")
