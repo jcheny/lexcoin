@@ -17,7 +17,7 @@
     <properties>
         <java.version>1.8</java.version>
         <commons-lang>3.9</commons-lang>
-        <com.alibaba>1.2.47</com.alibaba>
+        <com.alibaba>1.2.83</com.alibaba>
         <swagger.bootstrap.version>1.9.3</swagger.bootstrap.version>
         <swagger.version>2.9.2</swagger.version>
     </properties>
